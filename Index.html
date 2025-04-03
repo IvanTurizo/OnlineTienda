@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=dev
+    ice-width, initial-scale=1.0">
+    <title>Tienda De Deporte</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script/function.js" defer></script>
+    <script src="script/auth.js" defer></script>
+    <script src="script/registro.js" defer></script>
+</head>
+<script>
+    document.addEventListener("DOMContentLoaded", actualizarCarrito);
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        if (!localStorage.getItem("usuario")) {
+            window.location.href = "registro.html";
+        }
+    });
+</script> 
+
+<body>  
+    <header>
+        <h1>Tienda De Deporte</h1>
+        <div id="carrito">
+            <span>🛒 Carrito: <span id="contador-carrito">0</span> items</span>
+            <button id="boton-carrito" onclick="window.location.href='carrito.html'">Ver Carrito</button>
+        </div>
+    </header>
+    <main>
+        <div id="productos">
+            <div class="producto">
+                <img src="Productos/Uniforme.png" alt="Combo blanco del Real Madrid">
+                <h2>Uniforme</h2>
+                <p>Combo blanco del Real Madrid</p>
+                <p>Precio: $100,000</p>
+                <button data-id="1" data-nombre="Combo Real Madrid" data-precio="100000">Agregar al carrito</button>
+            </div>
+
+            <div class="producto">
+                <img src="Productos/Mujer.png" alt="Uniforme Negro Femenino">
+                <h2>Uniforme F</h2>
+                <p>Uniforme Negro Femenino</p>
+                <p>Precio: $95,000</p>
+                <button data-id="2" data-nombre="Uniforme F" data-precio="95000">Agregar al carrito</button>
+            </div>
+
+            <div class="producto">
+                <img src="Productos/Unicet.png" alt="Uniforme del Barcelona NEGRO">
+                <h2>Uniforme Unicet</h2>
+                <p>Uniforme del Barcelona NEGRO</p>
+                <p>Precio: $99,950</p>
+                <button data-id="3" data-nombre="Uniforme Unicet" data-precio="99950">Agregar al carrito</button>
+            </div>
+
+            <div class="producto">
+                <img src="Productos/Guayos.png" alt="Guayos deportivos">
+                <h2>Guayos</h2>
+                <p>Guayos deportivos</p>
+                <p>Precio: $120,000</p>
+                <button data-id="4" data-nombre="Guayos deportivos" data-precio="120000">Agregar al carrito</button>
+            </div>
+
+            <div class="producto">
+                <img src="Productos/Golty.png" alt="Guayos Golty Blancos">
+                <h2>Guayos Golty</h2>
+                <p>Guayos Golty Blancos</p>
+                <p>Precio: $135,450</p>
+                <button data-id="5" data-nombre="Guayos Golty" data-precio="135450">Agregar al carrito</button>
+            </div>
+
+            <div class="producto">
+                <img src="Productos/Nike.png" alt="Combo Azul Nike">
+                <h2>Guayos Nike</h2>
+                <p>Combo Azul Nike</p>
+                <p>Precio: $200,000</p>
+                <button data-id="6" data-nombre="Guayos Nike" data-precio="200000">Agregar al carrito</button>
+            </div>
+
+            <div class="producto">
+                <img src="Productos/Botines.png" alt="Guayos Mercurio Rojos">
+                <h2>Nuevos Botines</h2>
+                <p>Guayos Mercurio Rojos</p>
+                <p>Precio: $225,100</p>
+                <button data-id="7" data-nombre="Guayos Mercurio" data-precio="225100">Agregar al carrito</button>
+            </div>
+
+            <div class="producto">
+                <img src="Productos/Medias.png" alt="Medias anti deslizante">
+                <h2>Medias anti deslizante</h2>
+                <p>Realmente confiables y seguras</p>
+                <p>Precio: $45,900</p>
+                <button data-id="8" data-nombre="Medias anti deslizante" data-precio="45900">Agregar al carrito</button>
+            </div>
+
+            <div class="producto">
+                <img src="Productos/Licras.png" alt="Licra negra con excelente compresión">
+                <h2>Licras Deportivas Hombres</h2>
+                <p>Licra negra con excelente compresión</p>
+                <p>Precio: $60,990</p>
+                <button data-id="9" data-nombre="Licra Deportiva Hombre" data-precio="60990">Agregar al carrito</button>
+            </div>
+
+            <div class="producto">
+                <img src="Productos/1.png" alt="Licra negra de compresión larga">
+                <h2>Licras Deportivas</h2>
+                <p>Licra negra de compresión larga</p>
+                <p>Precio: $65,990</p>
+                <button data-id="10" data-nombre="Licra Deportiva" data-precio="65990">Agregar al carrito</button>
+            </div>
+        </div>
+    </main>
+
+    <div id="modal-carrito" class="modal">
+        <div class="modal-contenido">
+            <span class="cerrar">&times;</span>
+            <h2>Carrito de Compras</h2>
+            <ul id="carrito-items"></ul>
+            <p>Total: $<span id="total-carrito">0.00</span></p>
+            <button id="finalizar-compra">Finalizar Compra</button>
+        </div>
+    </div>
+      
+</body>
+</html>
